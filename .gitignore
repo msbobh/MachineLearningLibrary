@@ -1,0 +1,6 @@
+
+bin/Release/*.*
+obj/Release/*.*
+.vs/MLearningLibrary/v16/*.suo
+.vs/MLearningLibrary/v16/.suo
+bin/Debug/*.*
