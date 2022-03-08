@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Accord.IO" Version="3.8.0" />
+    <PackageReference Include="Accord.MachineLearning" Version="3.8.0" />
+    <PackageReference Include="Accord.Math" Version="3.8.0" />
+    <PackageReference Include="Accord.Neuro" Version="3.8.0" />
+    <PackageReference Include="Accord.Statistics" Version="3.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="UtilityFuncs">
+      <HintPath>..\..\..\Utility-Functions\bin\Debug\UtilityFuncs.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

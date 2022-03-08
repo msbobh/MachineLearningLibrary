@@ -1,0 +1,16 @@
+C:\Users\rober\github\MLearningLibrary\MLearningLibrary\MLearningLibrary\bin\Debug\net5.0\Accord.dll.config
+C:\Users\rober\github\MLearningLibrary\MLearningLibrary\MLearningLibrary\bin\Debug\net5.0\MLearningLibrary.deps.json
+C:\Users\rober\github\MLearningLibrary\MLearningLibrary\MLearningLibrary\bin\Debug\net5.0\MLearningLibrary.dll
+C:\Users\rober\github\MLearningLibrary\MLearningLibrary\MLearningLibrary\bin\Debug\net5.0\ref\MLearningLibrary.dll
+C:\Users\rober\github\MLearningLibrary\MLearningLibrary\MLearningLibrary\bin\Debug\net5.0\MLearningLibrary.pdb
+C:\Users\rober\github\MLearningLibrary\MLearningLibrary\MLearningLibrary\obj\Debug\net5.0\MLearningLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rober\github\MLearningLibrary\MLearningLibrary\MLearningLibrary\obj\Debug\net5.0\MLearningLibrary.AssemblyInfoInputs.cache
+C:\Users\rober\github\MLearningLibrary\MLearningLibrary\MLearningLibrary\obj\Debug\net5.0\MLearningLibrary.AssemblyInfo.cs
+C:\Users\rober\github\MLearningLibrary\MLearningLibrary\MLearningLibrary\obj\Debug\net5.0\MLearningLibrary.csproj.CoreCompileInputs.cache
+C:\Users\rober\github\MLearningLibrary\MLearningLibrary\MLearningLibrary\obj\Debug\net5.0\MLearningLibrary.dll
+C:\Users\rober\github\MLearningLibrary\MLearningLibrary\MLearningLibrary\obj\Debug\net5.0\ref\MLearningLibrary.dll
+C:\Users\rober\github\MLearningLibrary\MLearningLibrary\MLearningLibrary\obj\Debug\net5.0\MLearningLibrary.pdb
+C:\Users\rober\github\MLearningLibrary\MLearningLibrary\MLearningLibrary\bin\Debug\net5.0\UtilityFuncs.dll
+C:\Users\rober\github\MLearningLibrary\MLearningLibrary\MLearningLibrary\bin\Debug\net5.0\UtilityFuncs.pdb
+C:\Users\rober\github\MLearningLibrary\MLearningLibrary\MLearningLibrary\obj\Debug\net5.0\MLearningLibrary.csproj.CopyComplete
+C:\Users\rober\github\MLearningLibrary\MLearningLibrary\MLearningLibrary\obj\Debug\net5.0\MLearningLibrary.csprojAssemblyReference.cache
