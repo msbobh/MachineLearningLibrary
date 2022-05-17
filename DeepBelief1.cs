@@ -3,10 +3,10 @@ using Accord.Neuro;
 using Accord.Neuro.Learning;
 using System;
 using Accord.Statistics.Analysis;
-using UtilityFuncs;
 using Accord.MachineLearning;
 using Accord.MachineLearning.VectorMachines;
 using Accord.MachineLearning.Performance;
+using Functions;
 
 namespace DeepBelief
 {
@@ -72,8 +72,8 @@ namespace DeepBelief
              * Each of the sub layers are trained using contrastive divergence in turn 
              */
 
-            double[][] _jaggedInputs = externalFunc.convertToJaggedArray(inputs);
-            double[][] _jaggedLabels = externalFunc.convertToJaggedArray(labels);
+            double[][] _jaggedInputs = Util_Methods.convertToJaggedArray(inputs);
+            double[][] _jaggedLabels = Util_Methods.convertToJaggedArray(labels);
             _netWorkObj = new
                 DeepBeliefNetwork(NumInputs, hiddenLayers, numOutputs);
             // Network weights must be initialized but can't use 0, preferable to use randomized initializers
@@ -144,31 +144,11 @@ namespace DeepBelief
                 predicted: Predicted);
         }
 
-        public void CrossValidate(in int _folds, in int [] _trainingMatrix, in int[] _labels)
-        {
-            var crossvalidation = new CrossValidation<SupportVectorMachine<Accord.Statistics.Kernels.Linear, double[]>, double[]>()
-            {
-                K = 3, // Use 3 folds in cross-validation
-
-                // Indicate how learning algorithms for the models should be created
-                Learner = (s) => new Accord.MachineLearning.VectorMachines.Learning.SequentialMinimalOptimization<Accord.Statistics.Kernels.Linear, double[]>()
-                {
-                    Complexity = 100
-                },                                                
-
-                // Indicate how the performance of those models will be measured
-                Loss = (expected, actual, p) => new Accord.Math.Optimization.Losses.ZeroOneLoss(expected).Loss(actual),
-
-                Stratify = false, // do not force balancing of classes
-            };
-            var foo = CrossValidation.Create (k: _folds, learner: (l) => new DeepBeliefNetworkLearning(),loss: (actual, expected, l)=> ;
-            /*var cv = Accord.MachineLearning.CrossValidation.Create(k: _folds, learner: (p) => new DeepBeliefNetworkLearning<>,
-                loss: (actual, expected, p) => new Accord.Math.Optimization.Losses.ZeroOneLoss(expected).Loss(actual),
-                fit: (teacher, x, y, w) => teacher.Learn(x, y, w),
-                x: _trainingMatrix, y: _labels);
-            var _cv = cv.Learn(_trainingMatrix, _labels);*/
-
-        }
+        /*public void CrossValidate(in int _folds, in double [][] _trainingMatrix, in int[] _labels)
+        {                     
+            
+        No Accord Framework support for cross validation of a Neural network
+        } */
 
 
     }
@@ -185,7 +165,7 @@ namespace DeepBelief
         public int[] Predict(in double[,] input)
         {
             // The compute method needs a jagged array as input
-            double[][] jaggedInput = UtilityFuncs.externalFunc.convertToJaggedArray(input);
+            double[][] jaggedInput = Util_Methods.convertToJaggedArray(input);
             double[][] predicted = new double[jaggedInput.Length][];
 
             for (int i = 0; i <= jaggedInput.Length - 1; i++)
