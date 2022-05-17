@@ -4,3 +4,6 @@ obj/Release/*.*
 .vs/MLearningLibrary/v16/*.suo
 .vs/MLearningLibrary/v16/.suo
 bin/Debug/*.*
+bin/Debug/net5.0/*.*
+obj/Debug/net5.0/*.*
+obj/*.*
