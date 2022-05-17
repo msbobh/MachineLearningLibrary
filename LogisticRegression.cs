@@ -5,11 +5,12 @@ using Accord.MachineLearning; // needed for Cross Validation
 using Accord.Statistics.Analysis; // For confusion matrices
 using System;
 using Accord.IO;
+using Functions;
 
 
 namespace LogisticRegression
 {
-    public class Model
+    public class LRModel
     {
         /*
          * Public properties
@@ -66,7 +67,7 @@ namespace LogisticRegression
         private GeneralConfusionMatrix _gcm;
         private ConfusionMatrix _cm;
         //private ConfusionMatrix _cv;
-        public Model(in double[,] input, in int[] labels)
+        public LRModel(in double[,] input, in int[] labels)  // Constructor
         {
             /* The L-BFGS algorithm is a member of the broad family of quasi-Newton optimization methods.
              * L-BFGS stands for 'Limited memory BFGS'. Indeed, L-BFGS uses a limited memory variation of
@@ -76,9 +77,9 @@ namespace LogisticRegression
              * memory requirement, L-BFGS method is particularly well suited for optimization problems with
              * a large number of variables. 
              */
-            double[][] _jaggedInput = UtilityFuncs.externalFunc.convertToJaggedArray(input);
+            double[][] _jaggedInput = Util_Methods.convertToJaggedArray(input);
 
-            // Create a lbfgs model
+            // Create a LBFGS model
             _trainingMatrix = _jaggedInput;
 
             var mlbfgs = new MultinomialLogisticLearning<BroydenFletcherGoldfarbShanno>();
@@ -117,6 +118,12 @@ namespace LogisticRegression
                 _success = false;
             }
             return _success;
+        }
+
+        public ConfusionMatrix CreateConfusionMatrix(in int[] Expected, in int[] Predicted)
+        {
+            return new ConfusionMatrix(expected: Expected,
+                predicted: Predicted);
         }
     }
 

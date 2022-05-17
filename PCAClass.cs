@@ -54,7 +54,7 @@ namespace PricipalComponentsAnalysis
         private static bool Intermediate = false;
         private double[,] _inputMatrix;
         private double[,] s_Z;
-
+        
 
 
         // PCA class constructor
@@ -69,6 +69,8 @@ namespace PricipalComponentsAnalysis
             _inputMatrix = FeatureNormalization(_rawData);
             //Console.WriteLine("SVD run time {0}", SVDrun.Elapsed.ToString(@"mm\:ss"));
             Intermediate = _writeIntermediate;
+            Console.WriteLine("foop");
+            
         }
 
         public void Run()
@@ -79,7 +81,7 @@ namespace PricipalComponentsAnalysis
             System.Diagnostics.Stopwatch SVDrun = new System.Diagnostics.Stopwatch();
             SVDrun.Start();
             // Time how long the decomposition takes
-            SingularValueDecomposition SVN = new SingularValueDecomposition(_inputMatrix,
+            SingularValueDecomposition SVN = new SingularValueDecomposition(_inputMatrix/*_trythis._structRaw*/,
                                computeRightSingularVectors: true, computeLeftSingularVectors: false);
             _eigenVectors = SVN.RightSingularVectors;
             SVDrun.Stop();
@@ -93,15 +95,17 @@ namespace PricipalComponentsAnalysis
         {
             // Using the set of previously calculated eigenvectors aka principal components, project the original Matrix
             // into a k x m dimensional matrix using the k subset of eigenvectors
-            // Need to re-read the raw data as it is destryoed during the traning operation.
+            // Need to re-read the raw data as it is destroyed during the training operation.
 
-            using (CsvReader reader = new CsvReader(_fileName, hasHeaders: false))
+            /*using (CsvReader reader = new CsvReader(_fileName, hasHeaders: false))
             {
                 _rawData = reader.ToMatrix();
-            }
+            }*/
+            // What if we dont re read the input??
             _inputMatrix = FeatureNormalization(_rawData);
             s_Z = _inputMatrix.Dot(_eigenVectors.Get(startRow: 0, endRow: _eigenVectors.GetLength(0),
                                                          startColumn: 0, endColumn: dimension));
+            
             return s_Z;
         }
 

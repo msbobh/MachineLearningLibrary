@@ -1,7 +1,7 @@
 ﻿using Accord.MachineLearning.Bayes;
 using Accord.MachineLearning;
 using Accord.Math;
-using UtilityFuncs;
+using Functions;
 using System;
 using Accord.Math.Optimization.Losses;
 using Accord.IO;
@@ -79,6 +79,12 @@ namespace NBayes
             //NaiveBayes classifier = learner.Learn( trainingSet.ToJagged().ToInt32(), labelSet
             _classifier = _learner.Learn(_inputMatrix, _labels);
 
+        }
+
+        public ConfusionMatrix CreateConfusionMatrix(in int[] Expected, in int[] Predicted)
+        {
+            return new ConfusionMatrix(expected: Expected,
+                predicted: Predicted);
         }
 
         public bool SaveModel(in string filename)
