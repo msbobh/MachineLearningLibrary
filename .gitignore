@@ -8,3 +8,6 @@ bin/Debug/*.*
 bin/Debug/net5.0/*.*
 obj/Debug/net5.0/*.*
 obj/*.*
+.vs/MLearningLibrary/DesignTimeBuild/
+.vs/MLearningLibrary/v17/
+obj/Debug/net5.0/refint/
