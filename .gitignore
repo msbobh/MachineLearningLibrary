@@ -1,4 +1,5 @@
 
+obj/Debug/net5.0/MLearningLibrary.GeneratedMSBuildEditorConfig.editorconfig
 bin/Release/*.*
 obj/Release/*.*
 .vs/MLearningLibrary/v16/*.suo
