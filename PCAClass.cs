@@ -69,8 +69,7 @@ namespace PricipalComponentsAnalysis
             _inputMatrix = FeatureNormalization(_rawData);
             //Console.WriteLine("SVD run time {0}", SVDrun.Elapsed.ToString(@"mm\:ss"));
             Intermediate = _writeIntermediate;
-            Console.WriteLine("foop");
-            
+                        
         }
 
         public void Run()
